@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pauline [Ton nom] | Portfolio</title>
+<meta name="description" content="Portfolio de Pauline [Ton nom], étudiante en Master 2 — écologie côtière et intertidale, modélisation hydrodynamique.">
+
+<!-- Polices -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="brand">Pauline [Ton nom]</span>
+    <ul>
+      <li><a href="#parcours">Parcours</a></li>
+      <li><a href="#projets">Projets</a></li>
+      <li><a href="#competences">Compétences</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Écologie côtière & modélisation hydrodynamique</div>
+    <h1>Pauline [Ton nom]</h1>
+    <p class="role">
+      Étudiante en Master 2 [intitulé exact de ton master], je travaille à
+      l'interface entre écologie quantitative et modélisation hydrodynamique
+      côtière — actuellement sur le comportement alimentaire des limicoles
+      face à la dynamique des marées, dans le Golfe du Morbihan.
+    </p>
+    <div class="cta-row">
+      <a class="btn primary" href="mailto:[ton.email@exemple.com]">Me contacter</a>
+      <a class="btn" href="cv/CV_Pauline.pdf" target="_blank" rel="noopener">Mon CV (PDF)</a>
+      <a class="btn" href="https://github.com/[ton-pseudo]" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</header>
+
+<svg class="tide-divider" viewBox="0 0 1200 28" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 14 Q 60 2, 120 14 T 240 14 T 360 14 T 480 14 T 600 14 T 720 14 T 840 14 T 960 14 T 1080 14 T 1200 14"/>
+</svg>
+
+<!-- ================= PARCOURS ================= -->
+<section id="parcours">
+  <div class="wrap">
+    <h2>Parcours académique</h2>
+    <p class="lede">
+      [À compléter : quelques lignes sur ton chemin jusqu'ici — licence,
+      années clés, ce qui t'a menée vers l'écologie côtière et
+      l'océanographie.]
+    </p>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="when">[Année]</div>
+        <div>
+          <h3>[Formation — ex. Licence Biologie / Écologie]</h3>
+          <p>[Établissement, mention, ce que tu y as appris.]</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="when">[Année]</div>
+        <div>
+          <h3>[Master 1 — intitulé]</h3>
+          <p>[Établissement, spécialisation.]</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="when">2026–2027</div>
+        <div>
+          <h3>Master 2 — [intitulé exact]</h3>
+          <p>Stage de fin d'études : disponibilité de l'habitat intertidal pour les limicoles, Golfe du Morbihan.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="tide-divider" viewBox="0 0 1200 28" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 14 Q 60 26, 120 14 T 240 14 T 360 14 T 480 14 T 600 14 T 720 14 T 840 14 T 960 14 T 1080 14 T 1200 14"/>
+</svg>
+
+<!-- ================= PROJETS ================= -->
+<section id="projets">
+  <div class="wrap">
+    <h2>Projets</h2>
+    <p class="lede">Modélisation, écologie du comportement et traitement de données de terrain.</p>
+
+    <div class="project">
+      <h3>Disponibilité de l'habitat intertidal — Golfe du Morbihan</h3>
+      <div class="tag-row">
+        <span class="tag">TELEMAC2D</span>
+        <span class="tag">Python</span>
+        <span class="tag">QGIS</span>
+        <span class="tag">Suivi GPS</span>
+      </div>
+      <p>
+        Stage de M2 analysant la disponibilité de l'habitat intertidal pour
+        quatre espèces de limicoles (Bernache cravant, Courlis cendré,
+        Chevalier gambette, Pluvier argenté) à partir de sorties de
+        modélisation hydrodynamique SELAFIN, de données de suivi GPS et de
+        scénarios de montée du niveau marin. Développement de pipelines
+        Python pour l'extraction de traits de côte, le calcul de distances
+        aux lignes d'eau et la visualisation de zones d'inondation animées.
+      </p>
+      <p class="link">[Lien vers ton rapport / poster / GitHub si dispo →]</p>
+    </div>
+
+    <div class="project">
+      <h3>DDBoat — pilotage autonome par réseau de neurones</h3>
+      <div class="tag-row">
+        <span class="tag">PyTorch</span>
+        <span class="tag">Contrôle</span>
+        <span class="tag">Simulation</span>
+      </div>
+      <p>
+        Développement d'un contrôleur par réseau de neurones pour un bateau
+        à propulsion différentielle (DDBoat), capable de naviguer jusqu'à
+        une bouée puis de l'orbiter à rayon fixe. Travail itératif sur la
+        boucle d'entraînement, la pondération des fonctions de perte et la
+        visualisation des trajectoires simulées.
+      </p>
+      <p class="link">[Lien vers ton dépôt GitHub si dispo →]</p>
+    </div>
+
+    <div class="project">
+      <h3>[Autre projet à ajouter]</h3>
+      <div class="tag-row">
+        <span class="tag">[tag]</span>
+      </div>
+      <p>[Description courte : contexte, méthode, résultat.]</p>
+    </div>
+  </div>
+</section>
+
+<svg class="tide-divider" viewBox="0 0 1200 28" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 14 Q 60 2, 120 14 T 240 14 T 360 14 T 480 14 T 600 14 T 720 14 T 840 14 T 960 14 T 1080 14 T 1200 14"/>
+</svg>
+
+<!-- ================= COMPETENCES ================= -->
+<section id="competences">
+  <div class="wrap">
+    <h2>Compétences & outils</h2>
+    <div class="skills-grid">
+      <div class="skill">
+        <div class="name">Python</div>
+        <div class="desc">Pandas, Numpy, Xarray</div>
+      </div>
+      <div class="skill">
+        <div class="name">TELEMAC2D / SELAFIN</div>
+        <div class="desc">Modélisation hydrodynamique</div>
+      </div>
+      <div class="skill">
+        <div class="name">QGIS</div>
+        <div class="desc">Analyse spatiale</div>
+      </div>
+      <div class="skill">
+        <div class="name">R / RStudio</div>
+        <div class="desc">Analyse statistique, KDE</div>
+      </div>
+      <div class="skill">
+        <div class="name">PyTorch</div>
+        <div class="desc">Réseaux de neurones</div>
+      </div>
+      <div class="skill">
+        <div class="name">Git / GitHub</div>
+        <div class="desc">Versionning, code partagé</div>
+      </div>
+      <div class="skill">
+        <div class="name">[Autre outil]</div>
+        <div class="desc">[À compléter]</div>
+      </div>
+      <div class="skill">
+        <div class="name">[Autre outil]</div>
+        <div class="desc">[À compléter]</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="tide-divider" viewBox="0 0 1200 28" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 14 Q 60 26, 120 14 T 240 14 T 360 14 T 480 14 T 600 14 T 720 14 T 840 14 T 960 14 T 1080 14 T 1200 14"/>
+</svg>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p class="lede">Une question sur mon travail, une opportunité de stage ou de collaboration ? Discutons-en.</p>
+    <div class="contact-links">
+      <a href="mailto:[ton.email@exemple.com]">Email</a>
+      <a href="https://www.linkedin.com/in/[ton-profil]" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/[ton-pseudo]" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 — Pauline [Ton nom]</div>
+</footer>
+
+</body>
+</html>
