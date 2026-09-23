@@ -2,7 +2,6 @@
    Portfolio — Pauline
    Palette : marée / vasière
    ============================================ */
-
 :root{
   --bg:        #0E2027;
   --surface:   #16323B;
@@ -15,13 +14,10 @@
   --max-w:     760px;
   --radius:    3px;
 }
-
 *{ box-sizing: border-box; }
-
 html{
   scroll-behavior: smooth;
 }
-
 body{
   margin: 0;
   background: var(--bg);
@@ -31,27 +27,30 @@ body{
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
-
 h1, h2, h3{
   font-family: "Fraunces", Georgia, serif;
   font-weight: 500;
   line-height: 1.15;
   margin: 0 0 0.5em 0;
 }
-
 a{
   color: var(--amber);
   text-decoration: none;
 }
 a:hover{ text-decoration: underline; }
-
 a:focus-visible,
 button:focus-visible{
   outline: 2px solid var(--amber);
   outline-offset: 3px;
 }
 
-p{ color: var(--text-dim); max-width: 62ch; }
+/* --- Textes justifiés --- */
+p{
+  color: var(--text-dim);
+  max-width: 62ch;
+  text-align: justify;
+  hyphens: auto;
+}
 
 .wrap{
   max-width: var(--max-w);
@@ -116,9 +115,6 @@ header.hero .eyebrow{
   border: 2px solid var(--amber);
   flex-shrink: 0;
 }
-
-
-
 header.hero h1{
   font-size: clamp(2.2rem, 5vw, 3.2rem);
   color: var(--text);
@@ -129,6 +125,7 @@ header.hero .role{
   color: var(--text-dim);
   margin-top: 10px;
   max-width: 46ch;
+  text-align: left; /* on laisse le hero non justifié */
 }
 .cta-row{
   display: flex;
@@ -231,9 +228,47 @@ section .lede{
 }
 .project p{
   margin: 0 0 8px 0;
-  text-align: justify;
 }
 .project .link{ font-size: 0.9rem; }
+
+/* ===== NOUVEAU : Texte + figures côte à côte ===== */
+.projet-contenu {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin: 1.2rem 0 1.5rem;
+}
+
+.projet-contenu .texte {
+  flex: 1;
+  min-width: 0; /* important pour que le texte puisse se rétrécir */
+}
+
+.projet-contenu .texte p {
+  max-width: none; /* on enlève la limite de 62ch ici */
+}
+
+.figures {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.figure-thumb {
+  width: 210px;
+  height: auto;
+  border-radius: 6px;
+  cursor: zoom-in;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--line);
+}
+
+.figure-thumb:hover {
+  transform: scale(1.04);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
 
 /* ---------- Skills ---------- */
 .skills-grid{
@@ -263,21 +298,74 @@ section .lede{
   padding-bottom: 2px;
 }
 .contact-links a:hover{ border-color: var(--amber); text-decoration: none; }
-
 footer{
   padding: 40px 0 60px;
   color: var(--text-dim);
   font-size: 0.85rem;
 }
 
+/* ---------- Lightbox ---------- */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(8, 18, 22, 0.94);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+  padding: 20px;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: min(92vw, 1100px);
+  max-height: 90vh;
+  border-radius: 6px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--line);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 22px;
+  right: 28px;
+  color: var(--text);
+  font-size: 36px;
+  font-weight: 300;
+  cursor: pointer;
+  line-height: 1;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+.lightbox-close:hover {
+  opacity: 1;
+  color: var(--amber);
+}
+
 /* ---------- Responsive ---------- */
-@media (max-width: 600px){
+@media (max-width: 700px){
   nav ul{ gap: 16px; }
   header.hero{ padding: 80px 0 56px; }
   .timeline-item{ grid-template-columns: 1fr; gap: 4px; }
+
+  /* Sur mobile : figures en dessous du texte */
+  .projet-contenu {
+    flex-direction: column;
+    gap: 1.4rem;
+  }
+  .figure-thumb {
+    width: 100%;
+    max-width: 340px;
+  }
 }
 
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior: auto; }
+  .figure-thumb { transition: none; }
 }
