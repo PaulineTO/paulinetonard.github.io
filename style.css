@@ -229,7 +229,10 @@ section .lede{
   border-radius: var(--radius);
   padding: 3px 9px;
 }
-.project p{ margin: 0 0 8px 0; }
+.project p{
+  margin: 0 0 8px 0;
+  text-align: justify;
+}
 .project .link{ font-size: 0.9rem; }
 
 /* ---------- Skills ---------- */
