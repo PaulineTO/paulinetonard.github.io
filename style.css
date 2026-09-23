@@ -45,11 +45,13 @@ button:focus-visible{
 }
 
 /* --- Textes justifiés --- */
-p{
+p {
   color: var(--text-dim);
   max-width: 62ch;
   text-align: justify;
-  hyphens: auto;
+  hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
 }
 
 .wrap{
