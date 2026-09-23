@@ -179,14 +179,11 @@ j'ai intégré le Master Sciences pour l'Environnement, parcours Géosciences, G
         d'accessibilité des zones intertidales, susceptible de réduire les opportunités d'alimentation
         pour les oiseaux côtiers
       </p>
-      
-
-      </p>
+  
       <p class="link">
         <a href="documents/rapport_M2.pdf" target="_blank">
             Consulter le rapport de stage → 
-       </a>
-</p>
+      </p>
       <!-- ===== FIGURES ===== -->
   <div class="figures-row">
     <figure class="figure-item" onclick="ouvrirLightbox(this)">
@@ -289,20 +286,30 @@ j'ai intégré le Master Sciences pour l'Environnement, parcours Géosciences, G
 </footer>
 <!-- ================= LIGHTBOX ================= -->
 <div id="lightbox" class="lightbox" onclick="fermerLightbox()">
-  <img id="lightbox-img" src="" alt="">
   <span class="lightbox-close" onclick="event.stopPropagation(); fermerLightbox();">&times;</span>
+  
+  <div class="lightbox-content" onclick="event.stopPropagation()">
+    <img id="lightbox-img" src="" alt="">
+    <div class="lightbox-text">
+      <h4 id="lightbox-title"></h4>
+      <p id="lightbox-desc"></p>
+    </div>
+  </div>
 </div>
 
 <script>
-  function ouvrirLightbox(img) {
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
+  function ouvrirLightbox(figure) {
+    const img = figure.querySelector('img');
+    const caption = figure.querySelector('.figure-caption');
+    const desc = figure.querySelector('.figure-desc');
+
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox-img').alt = img.alt || '';
     
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt;
-    lightbox.classList.add('active');
-    
-    // Empêche le scroll de la page
+    document.getElementById('lightbox-title').textContent = caption ? caption.textContent : (img.alt || '');
+    document.getElementById('lightbox-desc').textContent = desc ? desc.textContent.trim() : '';
+
+    document.getElementById('lightbox').classList.add('active');
     document.body.style.overflow = 'hidden';
   }
 
@@ -311,16 +318,12 @@ j'ai intégré le Master Sciences pour l'Environnement, parcours Géosciences, G
     document.body.style.overflow = '';
   }
 
-  // Fermer avec la touche Échap
   document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
-      fermerLightbox();
-    }
+    if (e.key === 'Escape') fermerLightbox();
   });
 </script>
 
-</body>
-</html>
+
 
 </body>
 </html>
