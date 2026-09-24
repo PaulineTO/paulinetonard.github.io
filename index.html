@@ -283,12 +283,13 @@ j'ai intégré le Master Sciences pour l'Environnement, parcours Géosciences, G
 <footer>
   <div class="wrap">© 2026 — Pauline Tonard</div>
 </footer>
+
 <!-- ================= LIGHTBOX ================= -->
 <div id="lightbox" class="lightbox" onclick="fermerLightbox()">
   <span class="lightbox-close" onclick="event.stopPropagation(); fermerLightbox();">&times;</span>
   
   <div class="lightbox-content" onclick="event.stopPropagation()">
-    <img id="lightbox-img" src="" alt="">
+    <img id="lightbox-img" src="" alt="" style="max-width: 80%; max-height: 80vh;">
     <div class="lightbox-text">
       <h4 id="lightbox-title"></h4>
       <p id="lightbox-desc"></p>
@@ -302,10 +303,10 @@ j'ai intégré le Master Sciences pour l'Environnement, parcours Géosciences, G
     const caption = figure.querySelector('.figure-caption');
     const desc = figure.querySelector('.figure-desc');
 
+    console.log("Image src :", img.src); // ← pour voir le chemin dans la console
+
     document.getElementById('lightbox-img').src = img.src;
-    document.getElementById('lightbox-img').alt = img.alt || '';
-    
-    document.getElementById('lightbox-title').textContent = caption ? caption.textContent : (img.alt || '');
+    document.getElementById('lightbox-title').textContent = caption ? caption.textContent : '';
     document.getElementById('lightbox-desc').textContent = desc ? desc.textContent.trim() : '';
 
     document.getElementById('lightbox').classList.add('active');
