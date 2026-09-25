@@ -189,15 +189,53 @@ j'ai intégré le Master Sciences pour l'Environnement, parcours Géosciences, G
       <!-- ===== FIGURES ===== -->
 <div class="figures-row">
   <figure class="figure-item" onclick="ouvrirLightbox(this)">
-    <img src="photos/stage_m2/plot_pourcent.png" alt="Taille des mailles du maillage">
-    <figcaption class="figure-caption">Taille des mailles du maillage</figcaption>
+    <img src="photos/stage_m2/taille_mailles.png" alt="Taille des mailles du maillage">
+    <figcaption class="figure-caption">Délimitation de la taille des mailles en mètres du modèle</figcaption>
     <div class="figure-desc" hidden>
-      Carte représentant la taille des mailles du maillage numérique utilisé pour les simulations TELEMAC-2D. 
-      Les mailles sont plus fines dans les zones d’intérêt (vasières) afin d’améliorer la précision du modèle hydrodynamique.
+      Le but de ce maillage était d'obtenir un compromis entre temps de calcul et précision. Pour cela, une taille 
+      de maille différente est appliquée au modèle. Dans les zones proches côtes (qui nous intéresse le plus), la 
+      taille des mailles est de 30m avant d'augmenter progressivement, jusqu'à atteindre 500m à la limite du 
+      domaine.
     </div>
   </figure>
 </div>
-    
+
+      <div class="figures-row">
+  <figure class="figure-item" onclick="ouvrirLightbox(this)">
+    <img src="photos/stage_m2/plot_pourcent.png" alt="Évolution de la disponibilité journalière des vasières intertidales (%) dans le golfe du 
+Morbihan et ses principaux estuaires. ">
+    <figcaption class="figure-caption">Évolution de la disponibilité journalière des vasières intertidales (%) dans le golfe du 
+Morbihan et ses principaux estuaires. </figcaption>
+    <div class="figure-desc" hidden>
+La disponibilité journalière des vasières varie selon un cycle d'environ 14 jours, calé sur l'alternance
+vives-eaux/ mortes-eaux. La relation est contre intuitive : en vives-eaux, la disponibilité moyenne diminue
+      , en effet le niveau d'eau monte plus haut et les vasières restent immergées plus longtemps. A l'inverse
+      en mortes-eaux, les faibles amplitudes de marées laissent les vasières hautes de l'estran découvertes
+      plus longtemps, augmentatn leur disponibilité moyenne. 
+      Cette dynamique varie selon la morphologie des sites : l'estuaire de Noyalo (peu profond) montre les 
+      plus forte variations, celui de Vannes une dynamique intermédiaires, et celui d'Auray (le plus profond)
+      une disponibilité faible et peu sensible au cycle tidal.
+    </div>
+  </figure>
+</div>
+
+      <div class="figures-row">
+  <figure class="figure-item" onclick="ouvrirLightbox(this)">
+    <img src="photos/stage_m2/dispo_kde_zoom3_courlis" alt="kde_zoom3_courlis ">
+    <figcaption class="figure-caption">Disponibilité mensuelle des zones intertidales (seuil de 10 cm) avec superposition des
+domaines vitaux (KDE 95 %) et zone cœur (KDE 50 %) des individus de Courlis cendré EC116253 et
+EC116255 (en haut) pour l’estuaire de la rivière de Noyalo. </figcaption>
+    <div class="figure-desc" hidden>
+Dans l’estuaire de Noyalo, les zones cœur des domaines vitaux des deux Courlis cendré restent stable
+au cours de l’hiver (Figure 18). Les zones cœur se concentrent dans les parties très disponibles de
+l’estuaire (disponibilité supérieure à 80 %). En revanche, les domaines vitaux sont plus étendus,
+notamment en novembre et décembre, où ils incluent une partie du chenal principal dont la disponibilité
+est principalement nulle mais dont les abords atteignent 50 à 60 % de disponibilité.
+    </div>
+  </figure>
+</div>
+
+      
 <div class="project">
       <h3>Stage de Master 1 : Évolution du littoral sableux de la presqu'île de Crozon depuis 1980 :
         caractérisation par analyse d'imagerie satellitaire, </h3>
