@@ -14,10 +14,13 @@
   --max-w:     760px;
   --radius:    3px;
 }
+
 *{ box-sizing: border-box; }
+
 html{
   scroll-behavior: smooth;
 }
+
 body{
   margin: 0;
   background: var(--bg);
@@ -27,24 +30,27 @@ body{
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
+
 h1, h2, h3{
   font-family: "Fraunces", Georgia, serif;
   font-weight: 500;
   line-height: 1.15;
   margin: 0 0 0.5em 0;
 }
+
 a{
   color: var(--amber);
   text-decoration: none;
 }
 a:hover{ text-decoration: underline; }
+
 a:focus-visible,
 button:focus-visible{
   outline: 2px solid var(--amber);
   outline-offset: 3px;
 }
 
-/* --- Textes justifiés --- */
+/* --- Textes justifiés (sans tirets) --- */
 p {
   color: var(--text-dim);
   max-width: 62ch;
@@ -127,7 +133,7 @@ header.hero .role{
   color: var(--text-dim);
   margin-top: 10px;
   max-width: 46ch;
-  text-align: left; /* on laisse le hero non justifié */
+  text-align: left;
 }
 .cta-row{
   display: flex;
@@ -233,43 +239,49 @@ section .lede{
 }
 .project .link{ font-size: 0.9rem; }
 
-/* ===== NOUVEAU : Texte + figures côte à côte ===== */
-.projet-contenu {
-  display: flex;
-  gap: 2rem;
-  align-items: flex-start;
-  margin: 1.2rem 0 1.5rem;
+/* ========== Figures (2 par ligne) ========== */
+.figures-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.2rem;
+  margin-top: 1.8rem;
+  max-width: 520px;
+  width: 100%;
 }
 
-.projet-contenu .texte {
-  flex: 1;
-  min-width: 0; /* important pour que le texte puisse se rétrécir */
-}
-
-.projet-contenu .texte p {
-  max-width: none; /* on enlève la limite de 62ch ici */
-}
-
-.figures {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  flex-shrink: 0;
-}
-
-.figure-thumb {
-  width: 210px;
-  height: auto;
-  border-radius: 6px;
+.figure-item {
+  margin: 0;
   cursor: zoom-in;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
-  border: 1px solid var(--line);
+  max-width: 240px;
+  transition: transform 0.2s ease;
 }
 
-.figure-thumb:hover {
-  transform: scale(1.04);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+.figure-item:hover {
+  transform: translateY(-3px);
+}
+
+.figure-item img {
+  width: 100%;
+  max-width: 240px;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+}
+
+.figure-caption {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  margin-top: 0.4rem;
+  text-align: center;
+  line-height: 1.35;
+}
+
+/* Empêche les images de déborder */
+.project img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* ---------- Skills ---------- */
@@ -300,58 +312,13 @@ section .lede{
   padding-bottom: 2px;
 }
 .contact-links a:hover{ border-color: var(--amber); text-decoration: none; }
+
 footer{
   padding: 40px 0 60px;
   color: var(--text-dim);
   font-size: 0.85rem;
 }
 
-/* ========== Figures sous le texte ========== */
-/* ========== Figures sous le texte ========== */
-/* ========== Figures sous le texte ========== */
-.figures-row {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.3rem;
-  margin-top: 1.8rem;
-  max-width: 560px;          /* largeur totale de la zone figures */
-  width: 100%;
-}
-
-.figure-item {
-  margin: 0;
-  cursor: zoom-in;
-  max-width: 100%;
-  transition: transform 0.2s ease;
-}
-
-.figure-item:hover {
-  transform: translateY(-3px);
-}
-
-.figure-item img {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 6px;
-  border: 1px solid var(--line);
-  box-shadow: 0 4px 14px rgba(0,0,0,0.3);
-}
-
-.figure-caption {
-  font-size: 0.82rem;
-  color: var(--text-dim);
-  margin-top: 0.45rem;
-  text-align: center;
-  line-height: 1.35;
-}
-
-/* Sécurité : empêche les images de déborder */
-.project img {
-  max-width: 100%;
-  height: auto;
-}
 /* ========== Lightbox ========== */
 .lightbox {
   display: none;
@@ -364,11 +331,9 @@ footer{
   padding: 20px;
   cursor: zoom-out;
 }
-
 .lightbox.active {
   display: flex;
 }
-
 .lightbox-content {
   display: flex;
   gap: 2.5rem;
@@ -377,7 +342,6 @@ footer{
   align-items: center;
   cursor: default;
 }
-
 .lightbox-content img {
   max-width: 60%;
   max-height: 85vh;
@@ -385,7 +349,6 @@ footer{
   border: 1px solid var(--line);
   box-shadow: 0 10px 40px rgba(0,0,0,0.5);
 }
-
 .lightbox-text {
   flex: 1;
   color: var(--text);
@@ -393,14 +356,12 @@ footer{
   line-height: 1.55;
   max-width: 380px;
 }
-
 .lightbox-text h4 {
   font-family: "Fraunces", serif;
   font-size: 1.3rem;
   color: var(--amber);
   margin: 0 0 1rem 0;
 }
-
 .lightbox-close {
   position: absolute;
   top: 22px;
@@ -414,13 +375,27 @@ footer{
   transition: opacity 0.2s;
   z-index: 10;
 }
-
 .lightbox-close:hover {
   opacity: 1;
   color: var(--amber);
 }
 
-/* Responsive */
+/* ---------- Responsive ---------- */
+@media (max-width: 700px){
+  nav ul{ gap: 16px; }
+  header.hero{ padding: 80px 0 56px; }
+  .timeline-item{ grid-template-columns: 1fr; gap: 4px; }
+
+  .figures-row {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+  .figure-item,
+  .figure-item img {
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 800px) {
   .lightbox-content {
     flex-direction: column;
@@ -433,29 +408,9 @@ footer{
   .lightbox-text {
     max-width: 100%;
   }
-  .figure-item {
-    max-width: 160px;
-  }
-}
-/* ---------- Responsive ---------- */
-@media (max-width: 700px){
-  nav ul{ gap: 16px; }
-  header.hero{ padding: 80px 0 56px; }
-  .timeline-item{ grid-template-columns: 1fr; gap: 4px; }
-
-  /* Sur mobile : figures en dessous du texte */
-  .projet-contenu {
-    flex-direction: column;
-    gap: 1.4rem;
-  }
-  .figure-thumb {
-    width: 100%;
-    max-width: 340px;
-  }
 }
 
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior: auto; }
-  .figure-thumb { transition: none; }
 }
